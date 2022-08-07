@@ -1,0 +1,16 @@
+log "patch_mp.ff" 0x0 0x4025
+
+Open "." "xbox-cut-2.dat"
+
+get REALSIZE asize
+set DUMMY = 229376
+math DUMMY -= REALSIZE 
+append
+log "patch_mp.ff" 0x0 REALSIZE
+append
+
+Open "." "xbox-dummy.dat"
+append
+log "patch_mp.ff" 0x0 DUMMY
+append
+cleanexit

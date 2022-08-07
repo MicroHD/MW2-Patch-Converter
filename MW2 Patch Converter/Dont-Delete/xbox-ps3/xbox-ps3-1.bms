@@ -1,0 +1,27 @@
+goto 0x25
+IDString "IWffs100"
+comtype deflate
+clog "xbox-patch_mp-extract.dat" 0x4027 0x37FFE 0x15D1FF
+
+Open "." "xbox-patch_mp-extract.dat"
+log "ps3-ext-cut-2.dat" 0x6E95A 0x1D181
+
+Open "." "ps3-ext-cut-1.dat"
+log "ps3-patch_mp-extract.dat" 0x0 0x68c16
+
+Open "." "ps3-ext-cut-2.dat"
+append
+log "ps3-patch_mp-extract.dat" 0x0 0x1D181
+append
+
+Open "." "ps3-ext-cut-3.dat"
+append
+log "ps3-patch_mp-extract.dat" 0x0 0xDA269
+append
+
+Open "." "ps3-patch_mp-extract.dat"
+Log "1.dat" 0x60000 0x10000
+Log "2.dat" 0x70000 0x10000
+Log "3.dat" 0x80000 0x10000
+
+cleanexit

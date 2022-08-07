@@ -1,0 +1,475 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D058D8DB-4B25-4175-917B-22717A68BCB2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>MW2_Patch_Converter</RootNamespace>
+    <AssemblyName>MW2 Patch Converter</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoUpdater.NET, Version=1.7.4.0, Culture=neutral, PublicKeyToken=501435c91b35f4bc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autoupdater.NET.Official.1.7.4\lib\net45\AutoUpdater.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar2">
+      <HintPath>E:\My Programs\Fastfile Programs\Bucn Cod4 and Cod5 editor\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebView2.Core, Version=1.0.1210.39, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.WebView2.1.0.1210.39\lib\net45\Microsoft.Web.WebView2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebView2.WinForms, Version=1.0.1210.39, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.WebView2.1.0.1210.39\lib\net45\Microsoft.Web.WebView2.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebView2.Wpf, Version=1.0.1210.39, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.WebView2.1.0.1210.39\lib\net45\Microsoft.Web.WebView2.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Dont-Delete\ps3-pc\ps3-dump.bms" />
+    <None Include="Dont-Delete\ps3-xbox\ps3-xbox-1.bms" />
+    <None Include="Dont-Delete\ps3-xbox\ps3-xbox-2.bms" />
+    <None Include="Dont-Delete\region\bles-blus.bms" />
+    <None Include="Dont-Delete\region\bles00684.bms" />
+    <None Include="Dont-Delete\region\bles00685.bms" />
+    <None Include="Dont-Delete\region\bles00686.bms" />
+    <None Include="Dont-Delete\region\bles00687.bms" />
+    <None Include="Dont-Delete\region\blus-bles.bms" />
+    <None Include="Dont-Delete\region\blus30377.bms" />
+    <None Include="Dont-Delete\tools\bles-blus.cmd" />
+    <None Include="Dont-Delete\tools\bles00684.cmd" />
+    <None Include="Dont-Delete\tools\bles00685.cmd" />
+    <None Include="Dont-Delete\tools\bles00686.cmd" />
+    <None Include="Dont-Delete\tools\bles00687.cmd" />
+    <None Include="Dont-Delete\tools\blus-bles.cmd" />
+    <None Include="Dont-Delete\tools\blus30377.cmd" />
+    <None Include="Dont-Delete\tools\ps3-cut-1.dat" />
+    <None Include="Dont-Delete\tools\ps3-cut-3.dat" />
+    <None Include="Dont-Delete\tools\ps3-dump.cmd" />
+    <None Include="Dont-Delete\tools\ps3-ext-cut-1.dat" />
+    <None Include="Dont-Delete\tools\ps3-ext-cut-3.dat" />
+    <None Include="Dont-Delete\tools\ps3-xbox-1.cmd" />
+    <None Include="Dont-Delete\tools\ps3-xbox-2.cmd" />
+    <None Include="Dont-Delete\tools\src\7z_advancecomp\7z_advancecomp.a" />
+    <None Include="Dont-Delete\tools\src\7z_advancecomp\README" />
+    <None Include="Dont-Delete\tools\src\bcl\Makefile" />
+    <None Include="Dont-Delete\tools\src\compression\jcalg1_d.lib" />
+    <None Include="Dont-Delete\tools\src\lzhl\hdec_g.tbl" />
+    <None Include="Dont-Delete\tools\src\lzhl\hdec_s.tbl" />
+    <None Include="Dont-Delete\tools\src\lzhl\hdisp.tbl" />
+    <None Include="Dont-Delete\tools\src\lzhl\henc.tbl" />
+    <None Include="Dont-Delete\tools\src\Makefile" />
+    <None Include="Dont-Delete\tools\src\szip\Makefile.am" />
+    <None Include="Dont-Delete\tools\src\szip\Makefile.in" />
+    <None Include="Dont-Delete\tools\src\szip\SZconfig.h.in" />
+    <None Include="Dont-Delete\tools\src\zziplib\LICENSE" />
+    <None Include="Dont-Delete\tools\src\zziplib\makefile" />
+    <None Include="Dont-Delete\tools\xbox-cut-1.dat" />
+    <None Include="Dont-Delete\tools\xbox-dummy.dat" />
+    <None Include="Dont-Delete\tools\xbox-dump.cmd" />
+    <None Include="Dont-Delete\tools\xbox-ext-cut-1.dat" />
+    <None Include="Dont-Delete\tools\xbox-ext-cut-3.dat" />
+    <None Include="Dont-Delete\tools\xbox-ps3-1.cmd" />
+    <None Include="Dont-Delete\tools\xbox-ps3-2.cmd" />
+    <None Include="Dont-Delete\xbox-pc\xbox-dump.bms" />
+    <None Include="Dont-Delete\xbox-ps3\xbox-ps3-1.bms" />
+    <None Include="Dont-Delete\xbox-ps3\xbox-ps3-2.bms" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Dont-Delete\tools\quickbms.exe" />
+    <Content Include="Dont-Delete\tools\src\7z_advancecomp\7z.h" />
+    <Content Include="Dont-Delete\tools\src\7z_advancecomp\7zdeflate.cc" />
+    <Content Include="Dont-Delete\tools\src\7z_advancecomp\7zlzma.cc" />
+    <Content Include="Dont-Delete\tools\src\7z_advancecomp\AriBitCoder.cc" />
+    <Content Include="Dont-Delete\tools\src\7z_advancecomp\AriBitCoder.h" />
+    <Content Include="Dont-Delete\tools\src\7z_advancecomp\AriConst.h" />
+    <Content Include="Dont-Delete\tools\src\7z_advancecomp\AriPrice.h" />
+    <Content Include="Dont-Delete\tools\src\7z_advancecomp\BinTree.h" />
+    <Content Include="Dont-Delete\tools\src\7z_advancecomp\BinTree2.h" />
+    <Content Include="Dont-Delete\tools\src\7z_advancecomp\BinTree2Main.h" />
+    <Content Include="Dont-Delete\tools\src\7z_advancecomp\BinTree3.h" />
+    <Content Include="Dont-Delete\tools\src\7z_advancecomp\BinTree3Main.h" />
+    <Content Include="Dont-Delete\tools\src\7z_advancecomp\BinTree3Z.h" />
+    <Content Include="Dont-Delete\tools\src\7z_advancecomp\BinTree3ZMain.h" />
+    <Content Include="Dont-Delete\tools\src\7z_advancecomp\BinTree4.h" />
+    <Content Include="Dont-Delete\tools\src\7z_advancecomp\BinTree4b.h" />
+    <Content Include="Dont-Delete\tools\src\7z_advancecomp\BinTree4bMain.h" />
+    <Content Include="Dont-Delete\tools\src\7z_advancecomp\BinTree4Main.h" />
+    <Content Include="Dont-Delete\tools\src\7z_advancecomp\BinTreeMain.h" />
+    <Content Include="Dont-Delete\tools\src\7z_advancecomp\BinTreeMF.h" />
+    <Content Include="Dont-Delete\tools\src\7z_advancecomp\BinTreeMFMain.h" />
+    <Content Include="Dont-Delete\tools\src\7z_advancecomp\BitTreeCoder.h" />
+    <Content Include="Dont-Delete\tools\src\7z_advancecomp\Const.h" />
+    <Content Include="Dont-Delete\tools\src\7z_advancecomp\CRC.cc" />
+    <Content Include="Dont-Delete\tools\src\7z_advancecomp\CRC.h" />
+    <Content Include="Dont-Delete\tools\src\7z_advancecomp\DeflateDecoder.cc" />
+    <Content Include="Dont-Delete\tools\src\7z_advancecomp\DeflateDecoder.h" />
+    <Content Include="Dont-Delete\tools\src\7z_advancecomp\DeflateEncoder.cc" />
+    <Content Include="Dont-Delete\tools\src\7z_advancecomp\DeflateEncoder.h" />
+    <Content Include="Dont-Delete\tools\src\7z_advancecomp\HuffmanDecoder.h" />
+    <Content Include="Dont-Delete\tools\src\7z_advancecomp\HuffmanEncoder.cc" />
+    <Content Include="Dont-Delete\tools\src\7z_advancecomp\HuffmanEncoder.h" />
+    <Content Include="Dont-Delete\tools\src\7z_advancecomp\IInOutStreams.cc" />
+    <Content Include="Dont-Delete\tools\src\7z_advancecomp\IInOutStreams.h" />
+    <Content Include="Dont-Delete\tools\src\7z_advancecomp\InByte.cc" />
+    <Content Include="Dont-Delete\tools\src\7z_advancecomp\InByte.h" />
+    <Content Include="Dont-Delete\tools\src\7z_advancecomp\LenCoder.cc" />
+    <Content Include="Dont-Delete\tools\src\7z_advancecomp\LenCoder.h" />
+    <Content Include="Dont-Delete\tools\src\7z_advancecomp\LiteralCoder.cc" />
+    <Content Include="Dont-Delete\tools\src\7z_advancecomp\LiteralCoder.h" />
+    <Content Include="Dont-Delete\tools\src\7z_advancecomp\LSBFDecoder.cc" />
+    <Content Include="Dont-Delete\tools\src\7z_advancecomp\LSBFDecoder.h" />
+    <Content Include="Dont-Delete\tools\src\7z_advancecomp\LSBFEncoder.cc" />
+    <Content Include="Dont-Delete\tools\src\7z_advancecomp\LSBFEncoder.h" />
+    <Content Include="Dont-Delete\tools\src\7z_advancecomp\LZMA.cc" />
+    <Content Include="Dont-Delete\tools\src\7z_advancecomp\LZMA.h" />
+    <Content Include="Dont-Delete\tools\src\7z_advancecomp\LZMADecoder.cc" />
+    <Content Include="Dont-Delete\tools\src\7z_advancecomp\LZMADecoder.h" />
+    <Content Include="Dont-Delete\tools\src\7z_advancecomp\LZMAEncoder.cc" />
+    <Content Include="Dont-Delete\tools\src\7z_advancecomp\LZMAEncoder.h" />
+    <Content Include="Dont-Delete\tools\src\7z_advancecomp\OutByte.cc" />
+    <Content Include="Dont-Delete\tools\src\7z_advancecomp\OutByte.h" />
+    <Content Include="Dont-Delete\tools\src\7z_advancecomp\Portable.h" />
+    <Content Include="Dont-Delete\tools\src\7z_advancecomp\RangeCoder.h" />
+    <Content Include="Dont-Delete\tools\src\7z_advancecomp\RCDefs.h" />
+    <Content Include="Dont-Delete\tools\src\7z_advancecomp\WindowIn.cc" />
+    <Content Include="Dont-Delete\tools\src\7z_advancecomp\WindowIn.h" />
+    <Content Include="Dont-Delete\tools\src\7z_advancecomp\WindowOut.cc" />
+    <Content Include="Dont-Delete\tools\src\7z_advancecomp\WindowOut.h" />
+    <Content Include="Dont-Delete\tools\src\bcl\bcltest.c" />
+    <Content Include="Dont-Delete\tools\src\bcl\bfc.c" />
+    <Content Include="Dont-Delete\tools\src\bcl\huffman.c" />
+    <Content Include="Dont-Delete\tools\src\bcl\huffman.h" />
+    <Content Include="Dont-Delete\tools\src\bcl\lz.c" />
+    <Content Include="Dont-Delete\tools\src\bcl\lz.h" />
+    <Content Include="Dont-Delete\tools\src\bcl\rice.c" />
+    <Content Include="Dont-Delete\tools\src\bcl\rice.h" />
+    <Content Include="Dont-Delete\tools\src\bcl\rle.c" />
+    <Content Include="Dont-Delete\tools\src\bcl\rle.h" />
+    <Content Include="Dont-Delete\tools\src\bcl\shannonfano.c" />
+    <Content Include="Dont-Delete\tools\src\bcl\shannonfano.h" />
+    <Content Include="Dont-Delete\tools\src\bcl\systimer.c" />
+    <Content Include="Dont-Delete\tools\src\bcl\systimer.h" />
+    <Content Include="Dont-Delete\tools\src\calling_conventions.h" />
+    <Content Include="Dont-Delete\tools\src\compression\advancecomp.cpp" />
+    <Content Include="Dont-Delete\tools\src\compression\alone_unpack.c" />
+    <Content Include="Dont-Delete\tools\src\compression\ashford.c" />
+    <Content Include="Dont-Delete\tools\src\compression\asura_huffboh.c" />
+    <Content Include="Dont-Delete\tools\src\compression\blast.c" />
+    <Content Include="Dont-Delete\tools\src\compression\blast.h" />
+    <Content Include="Dont-Delete\tools\src\compression\bpd.c" />
+    <Content Include="Dont-Delete\tools\src\compression\bpe2.c" />
+    <Content Include="Dont-Delete\tools\src\compression\brieflz.h" />
+    <Content Include="Dont-Delete\tools\src\compression\d3101.c" />
+    <Content Include="Dont-Delete\tools\src\compression\depack.c" />
+    <Content Include="Dont-Delete\tools\src\compression\depacks.c" />
+    <Content Include="Dont-Delete\tools\src\compression\depacks.h" />
+    <Content Include="Dont-Delete\tools\src\compression\de_lzah.c" />
+    <Content Include="Dont-Delete\tools\src\compression\de_lzh.c" />
+    <Content Include="Dont-Delete\tools\src\compression\dmc2.c" />
+    <Content Include="Dont-Delete\tools\src\compression\doomhuff.c" />
+    <Content Include="Dont-Delete\tools\src\compression\E-Decompressor.c" />
+    <Content Include="Dont-Delete\tools\src\compression\gz_unpack.c" />
+    <Content Include="Dont-Delete\tools\src\compression\hstest.c" />
+    <Content Include="Dont-Delete\tools\src\compression\hufffreq.h" />
+    <Content Include="Dont-Delete\tools\src\compression\huffmanlib.c" />
+    <Content Include="Dont-Delete\tools\src\compression\ilzr.h" />
+    <Content Include="Dont-Delete\tools\src\compression\infback9.h" />
+    <Content Include="Dont-Delete\tools\src\compression\K-Decompressor.c" />
+    <Content Include="Dont-Delete\tools\src\compression\libLZR.c" />
+    <Content Include="Dont-Delete\tools\src\compression\libLZR.h" />
+    <Content Include="Dont-Delete\tools\src\compression\lzari.c" />
+    <Content Include="Dont-Delete\tools\src\compression\lzfP.h" />
+    <Content Include="Dont-Delete\tools\src\compression\lzf_d.c" />
+    <Content Include="Dont-Delete\tools\src\compression\lzh.h" />
+    <Content Include="Dont-Delete\tools\src\compression\lzhuf.c" />
+    <Content Include="Dont-Delete\tools\src\compression\lzhxlib.c" />
+    <Content Include="Dont-Delete\tools\src\compression\lzrw3-a.c" />
+    <Content Include="Dont-Delete\tools\src\compression\lzss.h" />
+    <Content Include="Dont-Delete\tools\src\compression\lzx.h" />
+    <Content Include="Dont-Delete\tools\src\compression\lzxd.c" />
+    <Content Include="Dont-Delete\tools\src\compression\mn_incs.h" />
+    <Content Include="Dont-Delete\tools\src\compression\mppc.c" />
+    <Content Include="Dont-Delete\tools\src\compression\mspack.h" />
+    <Content Include="Dont-Delete\tools\src\compression\N-Decompressor.c" />
+    <Content Include="Dont-Delete\tools\src\compression\nintendo.h" />
+    <Content Include="Dont-Delete\tools\src\compression\prelude.h" />
+    <Content Include="Dont-Delete\tools\src\compression\puyo.c" />
+    <Content Include="Dont-Delete\tools\src\compression\quicklz.c" />
+    <Content Include="Dont-Delete\tools\src\compression\quicklz.h" />
+    <Content Include="Dont-Delete\tools\src\compression\rdc.h" />
+    <Content Include="Dont-Delete\tools\src\compression\rnc.c" />
+    <Content Include="Dont-Delete\tools\src\compression\S-Decompressor.c" />
+    <Content Include="Dont-Delete\tools\src\compression\scexpand.c" />
+    <Content Include="Dont-Delete\tools\src\compression\scz_core.c" />
+    <Content Include="Dont-Delete\tools\src\compression\scz_decompress_lib.c" />
+    <Content Include="Dont-Delete\tools\src\compression\sflcomp.c" />
+    <Content Include="Dont-Delete\tools\src\compression\sflcomp.h" />
+    <Content Include="Dont-Delete\tools\src\compression\shc.c" />
+    <Content Include="Dont-Delete\tools\src\compression\shc.h" />
+    <Content Include="Dont-Delete\tools\src\compression\shclib.c" />
+    <Content Include="Dont-Delete\tools\src\compression\sixpack.c" />
+    <Content Include="Dont-Delete\tools\src\compression\sr3c.c" />
+    <Content Include="Dont-Delete\tools\src\compression\sr3c.h" />
+    <Content Include="Dont-Delete\tools\src\compression\srank.c" />
+    <Content Include="Dont-Delete\tools\src\compression\stalker_lza.h" />
+    <Content Include="Dont-Delete\tools\src\compression\system.h" />
+    <Content Include="Dont-Delete\tools\src\compression\tzar_lzss.h" />
+    <Content Include="Dont-Delete\tools\src\compression\un434a.h" />
+    <Content Include="Dont-Delete\tools\src\compression\un49g.h" />
+    <Content Include="Dont-Delete\tools\src\compression\unbalz.cpp" />
+    <Content Include="Dont-Delete\tools\src\compression\uncompress.c" />
+    <Content Include="Dont-Delete\tools\src\compression\undarksector.h" />
+    <Content Include="Dont-Delete\tools\src\compression\undk2.h" />
+    <Content Include="Dont-Delete\tools\src\compression\undmc.c" />
+    <Content Include="Dont-Delete\tools\src\compression\unjam.c" />
+    <Content Include="Dont-Delete\tools\src\compression\unlz2k.h" />
+    <Content Include="Dont-Delete\tools\src\compression\unlzw.c" />
+    <Content Include="Dont-Delete\tools\src\compression\unlzwx.c" />
+    <Content Include="Dont-Delete\tools\src\compression\unlzx.c" />
+    <Content Include="Dont-Delete\tools\src\compression\unmeng.h" />
+    <Content Include="Dont-Delete\tools\src\compression\unmslzx.c" />
+    <Content Include="Dont-Delete\tools\src\compression\unpaq6v2.cpp" />
+    <Content Include="Dont-Delete\tools\src\compression\unq3huff.c" />
+    <Content Include="Dont-Delete\tools\src\compression\unquad.cpp" />
+    <Content Include="Dont-Delete\tools\src\compression\unrlew.h" />
+    <Content Include="Dont-Delete\tools\src\compression\unshrink.c" />
+    <Content Include="Dont-Delete\tools\src\compression\unthandor.c" />
+    <Content Include="Dont-Delete\tools\src\compression\usq.c" />
+    <Content Include="Dont-Delete\tools\src\compression\yuke_bpe.c" />
+    <Content Include="Dont-Delete\tools\src\encryption\3way.c" />
+    <Content Include="Dont-Delete\tools\src\encryption\anubis.c" />
+    <Content Include="Dont-Delete\tools\src\encryption\anubis.h" />
+    <Content Include="Dont-Delete\tools\src\encryption\aria.c" />
+    <Content Include="Dont-Delete\tools\src\encryption\crypton.c" />
+    <Content Include="Dont-Delete\tools\src\encryption\frog.c" />
+    <Content Include="Dont-Delete\tools\src\encryption\gost.c" />
+    <Content Include="Dont-Delete\tools\src\encryption\ice.c" />
+    <Content Include="Dont-Delete\tools\src\encryption\ice.h" />
+    <Content Include="Dont-Delete\tools\src\encryption\leverage_ssc.h" />
+    <Content Include="Dont-Delete\tools\src\encryption\lucifer.c" />
+    <Content Include="Dont-Delete\tools\src\encryption\mars.c" />
+    <Content Include="Dont-Delete\tools\src\encryption\misty1.c" />
+    <Content Include="Dont-Delete\tools\src\encryption\NoekeonDirectRef.c" />
+    <Content Include="Dont-Delete\tools\src\encryption\rotor.c" />
+    <Content Include="Dont-Delete\tools\src\encryption\safer.c" />
+    <Content Include="Dont-Delete\tools\src\encryption\safer.h" />
+    <Content Include="Dont-Delete\tools\src\encryption\seal.c" />
+    <Content Include="Dont-Delete\tools\src\encryption\seal.h" />
+    <Content Include="Dont-Delete\tools\src\encryption\seed.c" />
+    <Content Include="Dont-Delete\tools\src\encryption\seed.h" />
+    <Content Include="Dont-Delete\tools\src\encryption\serpent.c" />
+    <Content Include="Dont-Delete\tools\src\encryption\serpent.h" />
+    <Content Include="Dont-Delete\tools\src\encryption\skipjack.c" />
+    <Content Include="Dont-Delete\tools\src\encryption\std_defs.h" />
+    <Content Include="Dont-Delete\tools\src\encryption\tea.c" />
+    <Content Include="Dont-Delete\tools\src\encryption\tea.h" />
+    <Content Include="Dont-Delete\tools\src\encryption\twofish.c" />
+    <Content Include="Dont-Delete\tools\src\encryption\twofish.h" />
+    <Content Include="Dont-Delete\tools\src\encryption\xtea.c" />
+    <Content Include="Dont-Delete\tools\src\encryption\xtea.h" />
+    <Content Include="Dont-Delete\tools\src\encryption\xxtea.c" />
+    <Content Include="Dont-Delete\tools\src\encryption\xxtea.h" />
+    <Content Include="Dont-Delete\tools\src\encryption\zipcrypto.h" />
+    <Content Include="Dont-Delete\tools\src\extra\MemoryModule.c" />
+    <Content Include="Dont-Delete\tools\src\extra\MemoryModule.h" />
+    <Content Include="Dont-Delete\tools\src\extra\wcx.c" />
+    <Content Include="Dont-Delete\tools\src\extra\wcxhead.h" />
+    <Content Include="Dont-Delete\tools\src\gpl-2.0.txt" />
+    <Content Include="Dont-Delete\tools\src\lzhl\Huff.cpp" />
+    <Content Include="Dont-Delete\tools\src\lzhl\Lz.cpp" />
+    <Content Include="Dont-Delete\tools\src\lzhl\Lzhl.cpp" />
+    <Content Include="Dont-Delete\tools\src\lzhl\lzhl.h" />
+    <Content Include="Dont-Delete\tools\src\lzhl\Lzhl_tcp.cpp" />
+    <Content Include="Dont-Delete\tools\src\lzhl\Lzhl_tcp.h" />
+    <Content Include="Dont-Delete\tools\src\lzhl\Test.c" />
+    <Content Include="Dont-Delete\tools\src\lzhl\_huff.h" />
+    <Content Include="Dont-Delete\tools\src\lzhl\_lz.h" />
+    <Content Include="Dont-Delete\tools\src\lzhl\_lzhl.h" />
+    <Content Include="Dont-Delete\tools\src\lzma\Bra.h" />
+    <Content Include="Dont-Delete\tools\src\lzma\Bra86.c" />
+    <Content Include="Dont-Delete\tools\src\lzma\Lzma2Dec.c" />
+    <Content Include="Dont-Delete\tools\src\lzma\Lzma2Dec.h" />
+    <Content Include="Dont-Delete\tools\src\lzma\LzmaDec.c" />
+    <Content Include="Dont-Delete\tools\src\lzma\LzmaDec.h" />
+    <Content Include="Dont-Delete\tools\src\lzma\Types.h" />
+    <Content Include="Dont-Delete\tools\src\myenc.h" />
+    <Content Include="Dont-Delete\tools\src\ppmd\unppmdg.cpp" />
+    <Content Include="Dont-Delete\tools\src\ppmd\unppmdg_internal.h" />
+    <Content Include="Dont-Delete\tools\src\ppmd\unppmdh.cpp" />
+    <Content Include="Dont-Delete\tools\src\ppmd\unppmdh_internal.h" />
+    <Content Include="Dont-Delete\tools\src\ppmd\unppmdi.cpp" />
+    <Content Include="Dont-Delete\tools\src\ppmd\unppmdi_internal.h" />
+    <Content Include="Dont-Delete\tools\src\ppmd\unppmdj.cpp" />
+    <Content Include="Dont-Delete\tools\src\ppmd\unppmdj_internal.h" />
+    <Content Include="Dont-Delete\tools\src\quickbms.c" />
+    <Content Include="Dont-Delete\tools\src\sign_ext.h" />
+    <Content Include="Dont-Delete\tools\src\stristr.c" />
+    <Content Include="Dont-Delete\tools\src\szip\encoding.c" />
+    <Content Include="Dont-Delete\tools\src\szip\rice.c" />
+    <Content Include="Dont-Delete\tools\src\szip\rice.h" />
+    <Content Include="Dont-Delete\tools\src\szip\ricehdf.h" />
+    <Content Include="Dont-Delete\tools\src\szip\szip_adpt.h" />
+    <Content Include="Dont-Delete\tools\src\szip\szlib.h" />
+    <Content Include="Dont-Delete\tools\src\szip\sz_api.c" />
+    <Content Include="Dont-Delete\tools\src\tdcb\ahuff.c" />
+    <Content Include="Dont-Delete\tools\src\tdcb\arith-n.c" />
+    <Content Include="Dont-Delete\tools\src\tdcb\arith.c" />
+    <Content Include="Dont-Delete\tools\src\tdcb\arith1.c" />
+    <Content Include="Dont-Delete\tools\src\tdcb\arith1e.c" />
+    <Content Include="Dont-Delete\tools\src\tdcb\compand.c" />
+    <Content Include="Dont-Delete\tools\src\tdcb\huff.c" />
+    <Content Include="Dont-Delete\tools\src\tdcb\lzss.c" />
+    <Content Include="Dont-Delete\tools\src\tdcb\lzw12.c" />
+    <Content Include="Dont-Delete\tools\src\tdcb\lzw15v.c" />
+    <Content Include="Dont-Delete\tools\src\tdcb\mn_incs.c" />
+    <Content Include="Dont-Delete\tools\src\tdcb\mn_incs.h" />
+    <Content Include="Dont-Delete\tools\src\tdcb\silence.c" />
+    <Content Include="Dont-Delete\tools\src\unz.h" />
+    <Content Include="Dont-Delete\tools\src\zziplib\ac-common.h" />
+    <Content Include="Dont-Delete\tools\src\zziplib\block.c" />
+    <Content Include="Dont-Delete\tools\src\zziplib\bwt.c" />
+    <Content Include="Dont-Delete\tools\src\zziplib\coding.c" />
+    <Content Include="Dont-Delete\tools\src\zziplib\global.h" />
+    <Content Include="Dont-Delete\tools\src\zziplib\make_h.c" />
+    <Content Include="Dont-Delete\tools\src\zziplib\struct_model0.c" />
+    <Content Include="Dont-Delete\tools\src\zziplib\struct_model1.c" />
+    <Content Include="Dont-Delete\tools\src\zziplib\zzip-sfx.c" />
+    <Content Include="Dont-Delete\tools\src\zziplib\zzip.c" />
+    <Content Include="Dont-Delete\tools\src\zziplib\zzip.h" />
+    <Content Include="Dont-Delete\tools\src\zziplib\zzip.txt" />
+    <Content Include="Dont-Delete\tools\src\zziplib\zzlib.h" />
+    <Content Include="Dont-Delete\tools\src\zziplib\zzlib.txt" />
+    <Content Include="Dont-Delete\tools\zlibc.exe" />
+    <Content Include="favicon.ico" />
+    <None Include="Resources\mw21.png" />
+    <None Include="Resources\mw2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Dont-Delete\tools\gscdump\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Microsoft.Web.WebView2.1.0.1210.39\build\Microsoft.Web.WebView2.targets" Condition="Exists('..\packages\Microsoft.Web.WebView2.1.0.1210.39\build\Microsoft.Web.WebView2.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Web.WebView2.1.0.1210.39\build\Microsoft.Web.WebView2.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Web.WebView2.1.0.1210.39\build\Microsoft.Web.WebView2.targets'))" />
+  </Target>
+</Project>

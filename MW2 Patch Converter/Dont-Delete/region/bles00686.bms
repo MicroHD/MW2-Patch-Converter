@@ -1,0 +1,5 @@
+endian big
+set BLES00686 = 0x04
+goto 0x18
+put BLES00686 byte
+cleanexit

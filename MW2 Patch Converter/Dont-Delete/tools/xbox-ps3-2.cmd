@@ -1,0 +1,1 @@
+c:\patch-temp\tools\quickbms.exe -o -w C:\patch-temp\xbox-ps3\xbox-ps3-2.bms C:\patch-temp\tools\1.zlp C:\patch-temp\tools

@@ -1,0 +1,57 @@
+get REALSIZE asize
+get SIZE asize
+math REALSIZE -= 2
+goto 0x0
+endian big
+put REALSIZE SHORT
+Log "ps3-cut-2.dat" 0x0 SIZE
+
+Open "." "2.zlp"
+get REALSIZE asize
+get SIZE asize
+math REALSIZE -= 2
+goto 0x0
+endian big
+put REALSIZE SHORT
+append
+Log "ps3-cut-2.dat" 0x0 SIZE
+append
+
+Open "." "3.zlp"
+get REALSIZE asize
+get SIZE asize
+math REALSIZE -= 2
+goto 0x0
+endian big
+put REALSIZE SHORT
+append
+Log "ps3-cut-2.dat" 0x0 SIZE
+append
+
+Open "." "ps3-cut-1.dat"
+get REALSIZE asize
+log "patch_mp.ff" 0x0 REALSIZE
+
+Open "." "ps3-cut-2.dat"
+get REALSIZE asize
+append
+log "patch_mp.ff" 0x0 REALSIZE
+append
+
+Open "." "ps3-cut-3.dat"
+get REALSIZE asize
+append
+log "patch_mp.ff" 0x0 REALSIZE
+append
+
+Open "." "patch_mp.ff"
+get REALSIZE asize
+set DUMMY = 232570
+math DUMMY -= REALSIZE
+
+Open "." "xbox-dummy.dat"
+append
+log "patch_mp.ff" 0x0 DUMMY
+append
+cleanexit
+

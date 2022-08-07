@@ -1,0 +1,5 @@
+endian big
+set BLUS = 0x01
+goto 0x18
+put BLUS byte
+cleanexit

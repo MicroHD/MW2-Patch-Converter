@@ -1,0 +1,202 @@
+IDString "IWffu100"
+goto 0x25
+endian big
+comtype deflate
+#for
+get ZSIZE1 short
+savepos DATASTART1
+	clog "patch_mp-extract.dat" DATASTART1 ZSIZE1 65536
+math DATASTART1 + ZSIZE1
+goto DATASTART1
+get ZSIZE2 short
+savepos DATASTART2
+append
+	clog "patch_mp-extract.dat" DATASTART2 ZSIZE2 65536
+append
+
+math DATASTART2 + ZSIZE2
+goto DATASTART2
+get ZSIZE3 short
+savepos DATASTART3
+append
+	clog "patch_mp-extract.dat" DATASTART3 ZSIZE3 65536
+append
+
+math DATASTART3 + ZSIZE3
+goto DATASTART3
+get ZSIZE4 short
+savepos DATASTART4
+append
+	clog "patch_mp-extract.dat" DATASTART4 ZSIZE4 65536
+append
+
+math DATASTART4 + ZSIZE4
+goto DATASTART4
+get ZSIZE5 short
+savepos DATASTART5
+append
+	clog "patch_mp-extract.dat" DATASTART5 ZSIZE5 65536
+append
+
+math DATASTART5 + ZSIZE5
+goto DATASTART5
+get ZSIZE6 short
+savepos DATASTART6
+append
+	clog "patch_mp-extract.dat" DATASTART6 ZSIZE6 65536
+append
+
+math DATASTART6 + ZSIZE6
+goto DATASTART6
+get ZSIZE7 short
+savepos DATASTART7
+append
+	clog "patch_mp-extract.dat" DATASTART7 ZSIZE7 65536
+append
+
+math DATASTART7 + ZSIZE7
+goto DATASTART7
+get ZSIZE8 short
+savepos DATASTART8
+append
+	clog "patch_mp-extract.dat" DATASTART8 ZSIZE8 65536
+append
+
+math DATASTART8 + ZSIZE8
+goto DATASTART8
+get ZSIZE9 short
+savepos DATASTART9
+append
+	clog "patch_mp-extract.dat" DATASTART9 ZSIZE9 65536
+append
+
+math DATASTART9 + ZSIZE9
+goto DATASTART9
+get ZSIZE10 short
+savepos DATASTART10
+append
+	clog "patch_mp-extract.dat" DATASTART10 ZSIZE10 65536
+append
+
+math DATASTART10 + ZSIZE10
+goto DATASTART10
+get ZSIZE11 short
+savepos DATASTART11
+append
+	clog "patch_mp-extract.dat" DATASTART11 ZSIZE11 65536
+append
+
+math DATASTART11 + ZSIZE11
+goto DATASTART11
+get ZSIZE12 short
+savepos DATASTART12
+append
+	clog "patch_mp-extract.dat" DATASTART12 ZSIZE12 65536
+append
+
+math DATASTART12 + ZSIZE12
+goto DATASTART12
+get ZSIZE13 short
+savepos DATASTART13
+append
+	clog "patch_mp-extract.dat" DATASTART13 ZSIZE13 65536
+append
+
+math DATASTART13 + ZSIZE13
+goto DATASTART13
+get ZSIZE14 short
+savepos DATASTART14
+append
+	clog "patch_mp-extract.dat" DATASTART14 ZSIZE14 65536
+append
+
+math DATASTART14 + ZSIZE14
+goto DATASTART14
+get ZSIZE15 short
+savepos DATASTART15
+append
+	clog "patch_mp-extract.dat" DATASTART15 ZSIZE15 65536
+append
+
+math DATASTART15 + ZSIZE15
+goto DATASTART15
+get ZSIZE16 short
+savepos DATASTART16
+append
+	clog "patch_mp-extract.dat" DATASTART16 ZSIZE16 65536
+append
+
+math DATASTART16 + ZSIZE16
+goto DATASTART16
+get ZSIZE17 short
+savepos DATASTART17
+append
+	clog "patch_mp-extract.dat" DATASTART17 ZSIZE17 65536
+append
+
+math DATASTART17 + ZSIZE17
+goto DATASTART17
+get ZSIZE18 short
+savepos DATASTART18
+append
+	clog "patch_mp-extract.dat" DATASTART18 ZSIZE18 65536
+append
+
+math DATASTART18 + ZSIZE18
+goto DATASTART18
+get ZSIZE19 short
+savepos DATASTART19
+append
+	clog "patch_mp-extract.dat" DATASTART19 ZSIZE19 65536
+append
+
+math DATASTART19 + ZSIZE19
+goto DATASTART19
+get ZSIZE20 short
+savepos DATASTART20
+append
+	clog "patch_mp-extract.dat" DATASTART20 ZSIZE20 65536
+append
+
+math DATASTART20 + ZSIZE20
+goto DATASTART20
+get ZSIZE21 short
+savepos DATASTART21
+append
+	clog "patch_mp-extract.dat" DATASTART21 ZSIZE21 65536
+append
+
+math DATASTART21 + ZSIZE21
+goto DATASTART21
+get ZSIZE22 short
+savepos DATASTART22
+append
+	clog "patch_mp-extract.dat" DATASTART22 ZSIZE22 65536
+append
+
+Open "." "patch_mp-extract.dat"
+get REALSIZE asize
+goto 0x68c16
+endian big
+comtype zlib
+for
+	get NEGONE long
+	get ZSIZE long
+	get SIZE long
+	get UNKNOWN long
+	get FNAME string
+	savepos DATASTART
+	savepos FNPOS
+	math FNPOS -= 4
+	goto FNPOS
+	getdstring EXT 4
+	if EXT == "gsc"
+		clog FNAME DATASTART ZSIZE SIZE
+	endif
+	math DATASTART += ZSIZE
+	goto DATASTART
+	savepos POS
+	if POS == REALSIZE
+		cleanexit # exit safely
+	endif
+next

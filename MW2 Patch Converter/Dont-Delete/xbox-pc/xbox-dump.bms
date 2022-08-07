@@ -1,0 +1,31 @@
+goto 0x25
+IDString "IWffs100"
+comtype deflate
+clog "xbox-patch_mp-extract.dat" 0x4027 0x37FFE 0x15D1FF
+
+Open "." "xbox-patch_mp-extract.dat"
+get REALSIZE asize
+goto 0x6E95A
+endian big
+comtype zlib
+for
+	get NEGONE long
+	get ZSIZE long
+	get SIZE long
+	get UNKNOWN long
+	get FNAME string
+	savepos DATASTART
+	savepos FNPOS
+	math FNPOS -= 4
+	goto FNPOS
+	getdstring EXT 4
+	if EXT == "gsc"
+		clog FNAME DATASTART ZSIZE SIZE
+	endif
+	math DATASTART += ZSIZE
+	goto DATASTART
+	savepos POS
+	if POS == REALSIZE
+		cleanexit # exit safely
+	endif
+next

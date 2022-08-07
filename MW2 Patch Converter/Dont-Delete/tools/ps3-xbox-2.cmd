@@ -1,0 +1,1 @@
+c:\patch-temp\tools\quickbms.exe -o -w C:\patch-temp\ps3-xbox\ps3-xbox-2.bms C:\patch-temp\tools\xbox-cut-1.dat C:\patch-temp\tools
